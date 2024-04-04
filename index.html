@@ -3,11 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Studio Ghibli</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand_color: "#F1A5B1",
+              dark_10: "#0B0A0A",
+              dark_20: "#FFFFFF",
+            },
+            fontFamily: {
+              andada_pro: ["Andada Pro", "serif"],
+              archivo: ["Archivo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body
-    class="flex h-screen w-screen justify-center bg-[url('/assets/imgs/background.png')]"
+    class="flex h-screen w-screen justify-center overflow-hidden bg-[url('/assets/imgs/background.png')]"
   >
     <div class="w-full max-w-5xl">
       <header class="flex w-full justify-between">
@@ -15,22 +38,22 @@
         <nav class="flex items-center">
           <ul class="flex flex-row gap-6">
             <li
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-[rgba(255,255,255,0.2)]"
+              class="border-white flex h-10 w-10 items-center justify-center rounded-full border bg-[rgba(255,255,255,0.2)]"
             >
               <img src="assets/imgs/logo-google.svg" alt="" srcset="" />
             </li>
             <li
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-[rgba(255,255,255,0.2)]"
+              class="border-white flex h-10 w-10 items-center justify-center rounded-full border bg-[rgba(255,255,255,0.2)]"
             >
               <img src="assets/imgs/logo-facebook.svg" alt="" srcset="" />
             </li>
             <li
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-[rgba(255,255,255,0.2)]"
+              class="border-white flex h-10 w-10 items-center justify-center rounded-full border bg-[rgba(255,255,255,0.2)]"
             >
               <img src="assets/imgs/logo-twitter.svg" alt="" srcset="" />
             </li>
             <li
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-[rgba(255,255,255,0.2)]"
+              class="border-white flex h-10 w-10 items-center justify-center rounded-full border bg-[rgba(255,255,255,0.2)]"
             >
               <img src="assets/imgs/logo-instagram.svg" alt="" srcset="" />
             </li>
@@ -38,18 +61,39 @@
         </nav>
       </header>
       <main class="h-full w-full">
-        <section class="flex h-full items-center justify-between text-white">
-          <div class="flex h-full w-[502px] flex-col justify-center gap-8">
-            <small class="text-xl font-bold leading-[27.24px]"
-              >HAYAO MIYAZAKI</small
-            >
-            <h1 class="text-6xl font-extrabold leading-[70.4px]">
-              A VIAGEM DE CHIHIRO
-            </h1>
-            <p class="text-2xl font-medium leading-9">
-              Chihiro chega a um mundo mágico dominado por uma bruxa. Aqueles
-              que a desobedecem são transformados em animais.
-            </p>
+        <section class="text-white flex h-full items-center justify-between">
+          <div class="flex h-full w-[502px] flex-col justify-center gap-12">
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-2">
+                <small class="text-xl font-bold leading-[27.24px]"
+                  >HAYAO MIYAZAKI</small
+                >
+                <h1
+                  class="font-andada_pro h-[140px] w-[445px] text-[64px] font-extrabold leading-[70.4px]"
+                >
+                  A VIAGEM DE CHIHIRO
+                </h1>
+              </div>
+              <p class="font-archivo text-2xl font-medium leading-9">
+                Chihiro chega a um mundo mágico dominado por uma bruxa. Aqueles
+                que a desobedecem são transformados em animais.
+              </p>
+            </div>
+            <div class="flex flex-row items-center justify-between">
+              <button
+                class="bg-brand_color text-dark_10 flex h-12 items-center justify-center gap-2 rounded px-8 py-3 uppercase"
+                type="button"
+              >
+                <img src="assets/imgs/right-arrow.svg" alt="" srcset="" />
+                ASSISTIR AGORA
+              </button>
+              <button
+                class="bg-transparent text-white border-brand_color flex h-12 items-center justify-center gap-2 rounded border-2 px-8 py-3 uppercase"
+                type="button"
+              >
+                ASSISTA O TRAILER
+              </button>
+            </div>
           </div>
           <div>
             <img src="assets/imgs/ilustração.svg" alt="" srcset="" />
